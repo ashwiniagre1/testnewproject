@@ -5,8 +5,8 @@
     <amexio-body>
         <amexio-row>
             <amexio-column size="12">
-                <amexio-dropdown [(ngModel)]="getemployeedetailsModel.id" name="getemployeedetailsModel.id" [field-label]="'employeeId'" [http-url]="'https://uat.amexio.org:8991/rest-sample-app/api/emp/findall'" [http-method]="'get'" [data]="id_Data" [display-field]="'firstName'"
-                    [value-field]="'id'" (click)="click_id($event)">
+                <amexio-dropdown [(ngModel)]="getemployeedetailsModel.id" name="getemployeedetailsModel.id" [search]="true" [field-label]="'employeeId'" [http-url]="'https://uat.amexio.org:8991/rest-sample-app/api/emp/findall'" [http-method]="'get'" [data]="id_Data"
+                    [display-field]="'firstName'" [value-field]="'id'" (click)="click_id($event)">
                 </amexio-dropdown>
             </amexio-column>
         </amexio-row>
