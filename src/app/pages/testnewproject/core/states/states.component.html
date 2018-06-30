@@ -1,0 +1,17 @@
+<amexio-card [footer]="true" [header]="true" [show]="true" [header-align]="'left'" [footer-align]="'right'">
+    <amexio-header>
+        State
+    </amexio-header>
+    <amexio-body>
+        <amexio-dropdown [(ngModel)]="statesModel.countryId" name="statesModel.countryId" [search]="true" [field-label]="'Country'" [http-url]="'https://uat.amexio.org:8991/rest-sample-app/api/country/findall'" [http-method]="'get'" [data]="countryId_Data" [display-field]="'countryName'"
+            [value-field]="'id'" (click)="click_countryId($event)">
+        </amexio-dropdown>
+        <amexio-dropdown [(ngModel)]="statesModel.stateId" name="statesModel.stateId" [search]="true" [field-label]="'state'">
+        </amexio-dropdown>
+
+    </amexio-body>
+
+    <amexio-action>
+
+    </amexio-action>
+</amexio-card>

@@ -1,0 +1,44 @@
+<amexio-card [footer]="true" [header]="true" [show]="true" [header-align]="'left'" [footer-align]="'right'">
+    <amexio-header>
+        Employee Details
+    </amexio-header>
+    <amexio-body>
+        <amexio-row>
+            <amexio-column size="12">
+                <amexio-dropdown [(ngModel)]="getemployeedetailsModel.id" name="getemployeedetailsModel.id" [field-label]="'employeeId'" [http-url]="'https://uat.amexio.org:8991/rest-sample-app/api/emp/findall'" [http-method]="'get'" [data]="id_Data" [display-field]="'firstName'"
+                    [value-field]="'id'" (click)="click_id($event)">
+                </amexio-dropdown>
+            </amexio-column>
+        </amexio-row>
+
+        <amexio-fieldset [title]="'Employee Details'">
+            <amexio-row>
+                <amexio-column size="6">
+                    <amexio-text-input [field-label]="'First name'" [(ngModel)]="getemployeedetailsModel.firstName" name="getemployeedetailsModel.firstName" [allow-blank]="true" [min-length]="0" [max-length]="20" [font-size]="10" [has-label]="true">
+                    </amexio-text-input>
+                </amexio-column>
+                <amexio-column size="6">
+                    <amexio-text-input [field-label]="'Last name'" [(ngModel)]="getemployeedetailsModel.lastName" name="getemployeedetailsModel.lastName" [allow-blank]="true" [min-length]="0" [max-length]="20" [font-size]="10" [has-label]="true">
+                    </amexio-text-input>
+                </amexio-column>
+            </amexio-row>
+
+            <amexio-row>
+                <amexio-column size="6">
+                    <amexio-number-input [field-label]="'phone'" [(ngModel)]="getemployeedetailsModel.phone" name="getemployeedetailsModel.phone" [allow-blank]="true" [font-size]="10" [has-label]="true" [min-value]="0" [max-value]="20">
+                    </amexio-number-input>
+                </amexio-column>
+                <amexio-column size="6">
+                    <amexio-email-input [field-label]="'Email'" [(ngModel)]="getemployeedetailsModel.email" name="getemployeedetailsModel.email" [allow-blank]="true" [font-size]="10" [has-label]="true">
+                    </amexio-email-input>
+                </amexio-column>
+            </amexio-row>
+
+        </amexio-fieldset>
+
+    </amexio-body>
+
+    <amexio-action>
+
+    </amexio-action>
+</amexio-card>

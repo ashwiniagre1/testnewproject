@@ -1,0 +1,75 @@
+<amexio-card [footer]="true" [header]="true" [show]="true" [header-align]="'left'" [footer-align]="'right'">
+    <amexio-header>
+        Employee Registration
+    </amexio-header>
+    <amexio-body>
+        <amexio-row>
+            <amexio-column size="2">
+                <amexio-text-input [field-label]="'Employee Id'" [(ngModel)]="employeeregistrationModel.id" name="employeeregistrationModel.id" [place-holder]="'Enter Employee Id'" [allow-blank]="true" [min-length]="0" [max-length]="20" [font-size]="10" [has-label]="true">
+                </amexio-text-input>
+            </amexio-column>
+            <amexio-column size="5">
+                <amexio-text-input [field-label]="'First name'" [(ngModel)]="employeeregistrationModel.firstName" name="employeeregistrationModel.firstName" [place-holder]="'Enter first name'" [allow-blank]="true" [min-length]="0" [max-length]="20" [font-size]="10" [has-label]="true">
+                </amexio-text-input>
+            </amexio-column>
+            <amexio-column size="5">
+                <amexio-text-input [field-label]="'Last Name'" [(ngModel)]="employeeregistrationModel.lastName" name="employeeregistrationModel.lastName" [place-holder]="'Enter Last Name'" [allow-blank]="true" [min-length]="0" [max-length]="20" [font-size]="10" [has-label]="true">
+                </amexio-text-input>
+            </amexio-column>
+        </amexio-row>
+
+        <amexio-row>
+            <amexio-column size="6">
+                <amexio-radio-group [field-label]="'Gender'" name="employeeregistrationModel.genderId" [data-reader]="'data'" [display-field]="'genderName'" [value-field]="'genderId'" [data]="radiogroupData" [horizontal]="true">
+                </amexio-radio-group>
+            </amexio-column>
+            <amexio-column size="6">
+                <amexio-number-input [field-label]="'Age'" [(ngModel)]="employeeregistrationModel.age" name="employeeregistrationModel.age" [place-holder]="'Enter Age'" [allow-blank]="true" [font-size]="10" [has-label]="true" [min-value]="0" [max-value]="20">
+                </amexio-number-input>
+            </amexio-column>
+        </amexio-row>
+
+        <amexio-row>
+            <amexio-column size="6">
+                <amexio-date-time-picker [field-label]="'DOB'" [date-picker]="true" [(ngModel)]="employeeregistrationModel.dob" name="employeeregistrationModel.dob">
+                </amexio-date-time-picker>
+            </amexio-column>
+            <amexio-column size="6">
+                <amexio-text-input [field-label]="'Phone Number'" [(ngModel)]="employeeregistrationModel.phone" name="employeeregistrationModel.phone" [place-holder]="'Enter phone number'" [allow-blank]="true" [min-length]="0" [max-length]="20" [font-size]="10" [has-label]="true">
+                </amexio-text-input>
+            </amexio-column>
+        </amexio-row>
+
+        <amexio-row>
+            <amexio-column size="6">
+                <amexio-email-input [field-label]="'Email'" [(ngModel)]="employeeregistrationModel.email" name="employeeregistrationModel.email" [place-holder]="'Enter Email'" [allow-blank]="true" [font-size]="10" [has-label]="true">
+                </amexio-email-input>
+            </amexio-column>
+            <amexio-column size="6">
+                <amexio-dropdown [(ngModel)]="employeeregistrationModel.departmentId" name="employeeregistrationModel.departmentId" [search]="true" [field-label]="'Department'" [http-url]="'https://uat.amexio.org:8991/rest-sample-app/api/dept/findall'" [http-method]="'get'"
+                    [data]="departmentId_Data" [display-field]="'name'" [value-field]="'id'">
+                </amexio-dropdown>
+            </amexio-column>
+        </amexio-row>
+
+        <amexio-row>
+            <amexio-column size="6">
+                <amexio-dropdown [(ngModel)]="employeeregistrationModel.counrtyid" name="employeeregistrationModel.counrtyid" [search]="true" [field-label]="'country'" [http-url]="'https://uat.amexio.org:8991/rest-sample-app/api/country/findall'" [http-method]="'get'"
+                    [data]="counrtyid_Data" [display-field]="'countryName'" [value-field]="'id'" (click)="click_counrtyid($event)">
+                </amexio-dropdown>
+            </amexio-column>
+            <amexio-column size="6">
+                <amexio-dropdown [(ngModel)]="employeeregistrationModel.stateId" name="employeeregistrationModel.stateId" [search]="true" [field-label]="'state'">
+                </amexio-dropdown>
+            </amexio-column>
+        </amexio-row>
+
+
+    </amexio-body>
+
+    <amexio-action>
+        <amexio-button [label]="'Save'" [type]="'theme-color'" [tooltip]="'button'" [size]="'default'" [form-bind]="'save'" (click)="click_save($event)">
+        </amexio-button>
+
+    </amexio-action>
+</amexio-card>

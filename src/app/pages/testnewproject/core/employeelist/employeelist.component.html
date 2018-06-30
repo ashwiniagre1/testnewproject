@@ -1,0 +1,21 @@
+<amexio-card [footer]="true" [header]="false" [show]="true" [header-align]="'left'" [footer-align]="'right'">
+    <amexio-body>
+        <amexio-datagrid [title]="'Employee List'" [page-size]="10" [http-url]="'https://uat.amexio.org:8991/rest-sample-app/api/emp/findall'" [http-method]="'get'" [height]="200" [enable-column-fiter]="true">
+            <amexio-data-table-column [text]="'First name'" [data-index]="'firstName'" [data-type]="'string'">
+            </amexio-data-table-column>
+            <amexio-data-table-column [text]="'Last name'" [data-index]="'lastName'" [data-type]="'string'">
+            </amexio-data-table-column>
+            <amexio-data-table-column [text]="'age'" [data-index]="'age'" [data-type]="'string'">
+            </amexio-data-table-column>
+            <amexio-data-table-column [text]="'phone'" [data-index]="'phone'" [data-type]="'string'">
+            </amexio-data-table-column>
+            <amexio-data-table-column [text]="'email'" [data-index]="'email'" [data-type]="'string'">
+            </amexio-data-table-column>
+        </amexio-datagrid>
+
+    </amexio-body>
+
+    <amexio-action>
+
+    </amexio-action>
+</amexio-card>
